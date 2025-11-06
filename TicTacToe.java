@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class TicTacToe {
     // static variabel supaya bisa diakses semua method
     static Scanner sc = new Scanner(System.in);
+    static int turnCount = 1;
     static char[][] cell = new char[3][3];
     static boolean change = true;
     static boolean done = false;
@@ -91,12 +92,21 @@ public class TicTacToe {
             result(cell[1][1]);
             return;
         }
+        // kondisi draw
+        if(turnCount == 9){     // papan sudah terisi semua
+            result('=');
+        }
+        turnCount++;
     }
 
     // menampilkan hasil permainan
     static void result(char a) {
         board();
-        System.out.println(a + " player won");
+        if(a == '='){
+            System.out.println("Draw");
+        }else{
+            System.out.println(a + " player won");
+        }
         done = true;
     }
     
