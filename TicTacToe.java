@@ -17,7 +17,7 @@ public class TicTacToe {
             if(change){         // memakai boolean untuk giliran
                 xturn();
             }else{
-                yturn();
+                oturn();
             }
             checkBoard();       // cek setiap selesai input
         } while (!done);
@@ -48,7 +48,7 @@ public class TicTacToe {
             xturn();
         }
     }
-    static void yturn(){
+    static void oturn(){
         System.out.print("Enter a row (0, 1 or 2) for player O: ");
         int x = sc.nextInt();
         System.out.print("Enter a column (0, 1 or 2) for player O: ");
@@ -58,7 +58,7 @@ public class TicTacToe {
             change = true;
         } else{
             System.out.println("the sell is already occupied or the selection is invalid");
-            yturn();
+            oturn();
         }
     }
     // cek langkah valid
@@ -69,7 +69,7 @@ public class TicTacToe {
         return cell[x][y] == ' ';
     }
 
-    // cek siapa yang menang
+    // cek siapa yang menang atau seri
     static void checkBoard(){
         for(int i = 0;i<3;i++){
             // cek diagonal
@@ -92,9 +92,10 @@ public class TicTacToe {
             result(cell[1][1]);
             return;
         }
+
         // kondisi draw
         if(turnCount == 9){     // papan sudah terisi semua
-            result('=');
+            result('=');     // "sama dengan" untuk hasil yang sama
         }
         turnCount++;
     }
