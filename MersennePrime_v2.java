@@ -33,11 +33,11 @@ public class MersennePrime_v2 {
     }
     // method boolean untuk mengecek bilangan prima
     static boolean isPrime(long bilangan){
-        if(bilangan <=1 || bilangan % 2 == 0){
-            return false;
-        }
         if(bilangan == 2){
             return true;
+        }
+        if(bilangan <=1 || bilangan % 2 == 0){
+            return false;
         }
 
         for(long i = 3; i <= Math.sqrt(bilangan);i+=2){
