@@ -8,7 +8,7 @@ public class MersennePrime_v2 {
         while(true){
             System.out.print("Masukan nilai pangkat (2-61): ");
             n = sc.nextInt();
-            if(n <= 1 || n >= 62){
+            if(n <= 1 || n >= 61){
                 System.out.println("Nilai pangkat berada pada luar batas, hanya 2 hingga 61 yang diizinkan");
             }else{
                 break;
