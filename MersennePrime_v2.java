@@ -4,7 +4,7 @@ public class MersennePrime_v2 {
         Scanner sc = new Scanner(System.in);
         // deklarasi loop condition        
         int n; 
-        
+
         while(true){
             System.out.print("Masukan nilai pangkat (2-61): ");
             n = sc.nextInt();
@@ -40,7 +40,7 @@ public class MersennePrime_v2 {
             return true;
         }
 
-        for(long i = 3; i*i <= bilangan;i+=2){
+        for(long i = 3; i <= Math.sqrt(bilangan);i+=2){
             if(bilangan % i == 0){
                 return false;
             }
